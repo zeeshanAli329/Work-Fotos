@@ -4,9 +4,9 @@ import NavBar from "../home-components/header/NavBar";
 import Link from "next/link";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import Slider from "../home-components/hero-section/img-slider/Slider";
-import FAQAccordion from "../home-components/hero-section/bottom-hero-section/BottomSection";
 import LastHeroSection from "../home-components/hero-section/last-hero-section/LastHeroSection";
 import Footer from "../home-components/footer/Footer";
+import WorksPage from "../data/worksPage";
 
 const page = () => {
   return (
@@ -319,7 +319,7 @@ const page = () => {
         </div>
         <div className="flex flex-col lg:px-[100px] md:px-[64px] px-[24px] relative">
           <Slider />
-          <FAQAccordion />
+          <WorksPage />
           <div className="relative z-10 -mb-[80px]">
             <LastHeroSection />
           </div>

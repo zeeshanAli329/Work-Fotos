@@ -8,6 +8,7 @@ import InfoSectionC from "./hero-section/bottom-hero-section/BottomSection";
 
 import Link from "next/link";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
+import General from "../data/general";
 
 const Home = () => {
   return (
@@ -57,7 +58,8 @@ const Home = () => {
 
           <div className="flex flex-col lg:px-[100px] md:px-[100px] px-[24px] relative ">
             <Slider />
-            <InfoSectionC />
+            {/* <InfoSectionC /> */}
+            <General />
             <div className="relative z-10 -mb-[80px]">
            
               <LastHeroSection />

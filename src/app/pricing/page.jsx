@@ -1,10 +1,9 @@
 import next from "next";
-import NavBar from "../home-components/header/NavBar";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
-import FAQ from "./faq/FAQ";
 import LastHeroSection from "../home-components/hero-section/last-hero-section/LastHeroSection";
 import Footer from "../home-components/footer/Footer";
 import WhiteNavBar from "../home-components/header/whitenav/WhiteNavBar";
+import PricingFaq from "../data/PricingFaq";
 
 const page = () => {
   const features = [
@@ -21,7 +20,6 @@ const page = () => {
   return (
     <section className="flex-flex-col justify-center items-center bg-gradient-to-br from-blue-50 to-indigo-100  ">
       <div className="flex flex-col bg-[linear-gradient(180deg,#1D4ED8_0%,#558DE2_47.89%,#558DE2_57.09%,#2769D7_100%)] m:h-screen lg:h-screen h-[585px] w-full ">
-        {/* <NavBar /> */}
         <WhiteNavBar />
 
         <div className="flex flex-col justify-end   h-screen md:items-end lg:items-end items-center">
@@ -149,7 +147,9 @@ const page = () => {
 
         <div className="flex flex-col  relative">
           {/* <Slider /> */}
-          <FAQ />
+          {/* <FAQ /> */}
+          <PricingFaq />
+      
           <div className="relative z-10 lg:-mb-[80px] mb-[130px]">
             <LastHeroSection />
           </div>
