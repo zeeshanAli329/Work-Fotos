@@ -31,9 +31,8 @@ export default function FAQ() {
   };
 
   return (
-    <section className=" w-full flex flex-col md:flex-row items-center justify-between  max-w-[1440px] mx-auto gap-5 md:w-full lg:mt-20 md:mt-20 lg:mb-30 md:mb-20 mt-10 mb-10 ">
-      {/* LEFT (Image Section) */}
-      <div className="w-full md:w-1/2 flex justify-center md:justify-start mb-8 md:mb-0 ">
+    <section className="w-full flex flex-col md:flex-row items-start justify-between max-w-[1440px] mx-auto  gap-5 md:w-full mt-10 mb-10">
+      <div className="w-full md:w-1/2 flex justify-center md:justify-start md:mb-0">
         <img
           src="/pricing-photo.svg"
           alt="FAQ section"
@@ -41,18 +40,15 @@ export default function FAQ() {
         />
       </div>
 
-      {/* RIGHT (FAQ Content) */}
-      <div className="w-full lg:w-1/2 flex flex-col items-start justify-between  md:w-[343px] md:h-[434px] ">
-        {/* Heading */}
+      <div className="w-full lg:w-1/2 flex flex-col items-start justify-start md:w-[343px] md:h-[434px]  h-auto">
+        <div className="w-full flex flex-col justify-between lg:gap-13 gap-5 md:gap-[20px]">
+          <div className="md:flex lg:flex w-[70%] text-center md:text-left hidden">
+            <h2 className="lg:text-3xl md:text-[36px] font-semibold text-gray-900 leading-snug">
+              Work Fotos Pricing{" "}
+              <span className="text-blue-600 font-bold">FAQs</span>
+            </h2>
+          </div>
 
-        <div className="w-full flex flex-col justify-between lg:gap-13 gap-5 md:gap-[20px] md:justify-between ">
-        <div className=" md:flex lg:flex w-[70%] text-center md:text-left hidden">
-          <h2 className="lg:text-3xl md:text-[36px] font-semibold text-gray-900 leading-snug">
-            Work Fotos Pricing{" "}
-            <span className="text-blue-600 font-bold">FAQs</span>
-          </h2>
-        </div>
-        {/* FAQ List */}
           {faqData.map((faq, index) => {
             const isOpen = openIndex === index;
             return (

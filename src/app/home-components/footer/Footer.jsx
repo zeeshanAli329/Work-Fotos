@@ -57,7 +57,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* middle links */}
           <div
             className="
               flex flex-col  sm:flex-row gap-10 sm:gap-20 
@@ -109,7 +108,7 @@ const Footer = () => {
                 className="w-full sm:w-[320px] border border-gray-300 rounded-[12px] h-[50px] md:h-[57px] px-4 pr-[90px] focus:outline-none"
               />
               <button
-                className="group absolute right-[5px] top-[4px] bg-[#1D4ED8] hover:bg-[#1E3A8A] text-white 
+                className="group absolute lg:right-[85px] right-3 top-[4px] bg-[#1D4ED8] hover:bg-[#1E3A8A] text-white 
                 text-[14px] md:text-[15px] rounded-[10px] w-[80px] md:w-[103px] h-[40px] md:h-[49px] flex items-center justify-center gap-1 transition"
               >
                 Join
@@ -121,7 +120,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* bottom */}
         <div className="mt-10 text-center text-[14px] md:text-[16px] text-gray-600 border-t border-gray-200 pt-5">
           ©2025 WorkFotos | All Rights Reserved
         </div>

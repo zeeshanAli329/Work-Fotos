@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
+// import Faq from "../../../Faq";
 
 export default function InfoSectionC({ imageType = "default" }) {
   const [openIndex, setOpenIndex] = useState(null);
@@ -38,9 +39,7 @@ export default function InfoSectionC({ imageType = "default" }) {
 
   return (
     <section className="w-full flex flex-col md:flex-row items-center justify-between  py-16 max-w-[1440px]">
-      {/* LEFT: TEXT + FAQ */}
       <div className="w-full md:w-1/2 flex flex-col items-start space-y-8">
-        {/* Heading */}
         <div className="text-center md:text-left w-full">
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 leading-snug text-center md:text-left md:max-w-[100%]">
             <span className="text-blue-600 font-bold">Everything</span> You Need
@@ -96,12 +95,14 @@ export default function InfoSectionC({ imageType = "default" }) {
                   )}
                 </AnimatePresence>
               </div>
+            
             );
           })}
         </div>
       </div>
 
       <div className="hidden md:flex w-1/2 justify-end">
+      {/* <Faq question={"hello"} answer={"answer"}/> */}
         <img
           src={imageSrc}
           alt="FAQ section"

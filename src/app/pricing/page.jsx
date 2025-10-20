@@ -150,14 +150,12 @@ const page = () => {
         <div className="flex flex-col  relative">
           {/* <Slider /> */}
           <FAQ />
-          <div className="relative z-10 lg:-mb-[80px] -mb-[130px]">
+          <div className="relative z-10 lg:-mb-[80px] mb-[130px]">
             <LastHeroSection />
           </div>
         </div>
 
-        {/* <FAQ />
-        <LastHeroSection />
-        <Footer /> */}
+       
       </div>
         <Footer />
     </section>

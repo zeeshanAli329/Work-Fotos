@@ -234,7 +234,7 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* MOBILE BUTTON */}
+        
             <Link
               href="/login"
               className="group md:hidden flex items-center justify-center gap-2 w-[190px] h-[53px] mx-auto mt-8

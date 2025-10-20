@@ -88,7 +88,6 @@ const Slider = () => {
           ))}
         </div>
 
-        {/* LEFT gradient (desktop only) */}
         <div
           aria-hidden="true"
           className="hidden md:block pointer-events-none absolute left-0 top-0 h-full w-[220px] z-20"
@@ -96,16 +95,13 @@ const Slider = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent backdrop-blur-sm" />
         </div>
 
-        {/* RIGHT gradient (desktop only) */}
         <div
           aria-hidden="true"
           className="hidden md:block pointer-events-none absolute right-0 top-0 h-full w-[220px] z-20"
-        >
+        > 
           <div className="absolute inset-0 bg-gradient-to-l from-white/90 via-white/60 to-transparent backdrop-blur-sm" />
         </div>
-
-        {/* Buttons — same exact desktop position */}
-        <div className="absolute right-4 top-4 z-30 flex gap-2">
+        <div className="absolute md:right-4 md:top-4 lg:right-4 lg:top-4 right-4 top-0 z-30 flex gap-2 ">
           <button
             onClick={handlePrev}
             className="bg-black text-white px-3 py-2 rounded-md shadow-md"

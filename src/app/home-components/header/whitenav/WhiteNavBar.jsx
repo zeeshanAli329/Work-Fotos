@@ -17,15 +17,15 @@ const WhiteNavBar = () => {
             <div className="flex items-center">
               <Link href="/">
                 <img
-                  src="/mb-logo.svg" 
+                  src="/mb-logo.svg"
                   alt="Logo"
                   className="md:h-[50px] lg:h-[50px] h-[28px] w-[139px] transition-all duration-300"
                 />
               </Link>
             </div>
 
-            {/* Links */}
-            <div className="hidden lg:flex gap-[32px] items-center font-poppins font-medium text-[18px] leading-[100%] tracking-[0%]">
+         
+            <div className="hidden lg:flex gap-[32px] items-center  font-poppins font-medium text-[18px] leading-[100%] tracking-[0%]">
               <Link href="/how-it-works">How It Works</Link>
               <Link href="/pricing">Pricing</Link>
               <Link href="/contact">Contact</Link>
@@ -45,8 +45,8 @@ const WhiteNavBar = () => {
               </div>
             </div>
 
-            {/* Mobile menu button */}
-            <div className="flex lg:hidden">
+            {/* Mobile Menu Button */}
+            <div className="flex lg:hidden text-blue-600">
               <button onClick={() => setOpenMenu(!openMenu)}>
                 <FiMenu size={24} />
               </button>
@@ -55,28 +55,58 @@ const WhiteNavBar = () => {
         </div>
       </nav>
 
-      {/* Mobile menu */}
-      {openMenu && (
-        <div className="fixed top-0 right-0 px-[30px] z-50 bg-white text-black flex flex-col items-start gap-2 py-6 text-lg font-medium lg:hidden h-screen w-[80%] transition-transform duration-500 ease-in-out">
-          <div className="flex flex-col w-full gap-[100px]">
-            <div className="flex justify-between w-full">
-              <img className="h-[28px] w-[139px]" src="/mb-logo.svg" alt="logo" />
-              <button onClick={() => setOpenMenu(false)}>
-                <MdClose size={24} />
-              </button>
-            </div>
-            <div className="flex flex-col gap-2">
-              <Link href="/how-it-works" onClick={() => setOpenMenu(false)}>How It Works</Link>
-              <Link href="/pricing" onClick={() => setOpenMenu(false)}>Pricing</Link>
-              <Link href="/contact" className="text-blue-600" onClick={() => setOpenMenu(false)}>Contact</Link>
-            </div>
+      {/* ---------- Animated Mobile Menu ---------- */}
+      <div
+        className={`fixed top-0 right-0 px-[30px] z-[9999] bg-white text-black flex flex-col items-start gap-2 py-6 text-lg font-medium lg:hidden h-screen w-[80%] transform transition-transform duration-500 ease-in-out ${
+          openMenu ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex flex-col w-full gap-[100px]">
+          <div className="flex justify-between w-full">
+            <img
+              className="h-[28px] w-[139px]"
+              src="/mb-logo.svg"
+              alt="logo"
+            />
+            <button onClick={() => setOpenMenu(false)}>
+              <MdClose size={24} />
+            </button>
           </div>
-          <div className="flex flex-col gap-5 w-full mt-40">
-            <Link href="/auth/login" className="flex justify-center items-center rounded-[100px] h-[49px] w-full border-2" onClick={() => setOpenMenu(false)}>Member Login</Link>
-            <Link href="/auth/login" className="flex justify-center items-center text-white rounded-[100px] h-[49px] w-full bg-[#1D4ED8]" onClick={() => setOpenMenu(false)}>Join Today</Link>
+
+          <div className="flex flex-col gap-2">
+            <Link href="/how-it-works" onClick={() => setOpenMenu(false)}>
+              How It Works
+            </Link>
+            <Link href="/pricing" onClick={() => setOpenMenu(false)}>
+              Pricing
+            </Link>
+            <Link
+              href="/contact"
+              className="text-blue-600"
+              onClick={() => setOpenMenu(false)}
+            >
+              Contact
+            </Link>
           </div>
         </div>
-      )}
+
+        <div className="flex flex-col gap-5 w-full mt-40">
+          <Link
+            href="/auth/login"
+            className="flex justify-center items-center rounded-[100px] h-[49px] w-full border-2"
+            onClick={() => setOpenMenu(false)}
+          >
+            Member Login
+          </Link>
+          <Link
+            href="/auth/login"
+            className="flex justify-center items-center text-white rounded-[100px] h-[49px] w-full bg-[#1D4ED8]"
+            onClick={() => setOpenMenu(false)}
+          >
+            Join Today
+          </Link>
+        </div>
+      </div>
     </>
   );
 };

@@ -1,4 +1,3 @@
-// Home.jsx
 "use client";
 import Footer from "./footer/Footer";
 import NavBar from "./header/NavBar";
@@ -14,7 +13,7 @@ const Home = () => {
   return (
     <div className="w-full max-w-[1452px]">
       <NavBar />
-      <div className="relative w-full min-h-screen max-w-[1450px]">
+      <div className="relative w-full min-h-screen max-w-[1450px] overflow-hidden">
         {/* -------- Background Video------ */}
         <video
           src="/hero-bg-video.mp4"
@@ -22,11 +21,11 @@ const Home = () => {
           loop
           muted
           playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover z-10"
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
         />
 
         {/* ---------------- hero section ------------- */}
-        <div className="flex justify-start items-center h-[calc(100vh-100px)] text-white lg:px-[100px] md:px-[100px] px-[20px] ">
+        <div className="absolute top-0 left-0 w-full h-full flex justify-start items-center text-white lg:px-[100px] md:px-[100px] px-[20px] z-20">
           <div className="w-[608px] gap-5">
             <div className="flex flex-col gap-5 mt-20">
               <h1 className="font-inter font-bold lg:text-[48px] md:text-[48px] text-[28px] leading-[100%] tracking-[0%]">
@@ -60,12 +59,14 @@ const Home = () => {
             <Slider />
             <InfoSectionC />
             <div className="relative z-10 -mb-[80px]">
-              {" "}
-              {/* Moves section upward */}
+           
               <LastHeroSection />
             </div>
           </div>
+          <div className="flex mt-10 ">
+
           <Footer />
+          </div>
         </div>
       </main>
     </div>
