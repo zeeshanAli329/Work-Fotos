@@ -36,7 +36,7 @@ const Slider = () => {
   }, []);
 
   useEffect(() => {
-    if (isMobile) return; 
+    if (isMobile) return;
     const el = sliderRef.current;
     if (!el) return;
     const scrollLeft = (slideWidth + gap) * index;
@@ -46,8 +46,7 @@ const Slider = () => {
   const images = isMobile ? mobileImages : desktopImages;
 
   return (
-    <section className="flex flex-col items-center py-10">
-      {/* Header */}
+    <section className="flex flex-col items-center py-10 px-[24px]">
       <div className="text-black flex flex-col justify-center items-center gap-5 w-full max-w-[1240px]">
         <h1 className="font-inter font-semibold text-[24px] leading-[100%] text-center md:text-[48px] lg:text-[48px] md:font-bold lg:font-bold w-[90%]">
           Real <span className="text-[#2563EB]">Stories</span> from the Field
@@ -58,8 +57,7 @@ const Slider = () => {
         </p>
       </div>
 
-      {/* Slider */}
-      <div className="relative w-full max-w-[1240px] h-[384px] overflow-hidden mt-10">
+      <div className="relative w-full max-w-[1240px]  h-[384px]  object-contain mt-10">
         <div
           ref={sliderRef}
           className={`flex gap-6 items-center h-full overflow-x-auto scroll-smooth no-scrollbar ${
@@ -72,7 +70,7 @@ const Slider = () => {
           {images.map((src, i) => (
             <div
               key={i}
-              className={`flex-shrink-0 rounded-2xl overflow-hidden shadow-lg ${
+              className={`flex-shrink-0  object-contain rounded-2xl  shadow-lg ${
                 isMobile ? "w-full h-[300px]" : "w-[800px] h-[306px]"
               }`}
             >
@@ -91,14 +89,14 @@ const Slider = () => {
           aria-hidden="true"
           className="hidden md:block pointer-events-none absolute left-0 top-0 h-full w-[220px] z-20"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent backdrop-blur-sm" />
+          <div className="absolute inset-0 rounded-4xl backdrop-blur-[2px] bg-white/10 pointer-events-none" />
         </div>
 
         <div
           aria-hidden="true"
           className="hidden md:block pointer-events-none absolute right-0 top-0 h-full w-[220px] z-20"
-        > 
-          <div className="absolute inset-0 bg-gradient-to-l from-white/90 via-white/60 to-transparent backdrop-blur-sm" />
+        >
+          <div className="absolute inset-0 rounded-4xl backdrop-blur-[2px] bg-white/10 pointer-events-none" />
         </div>
         <div className="absolute md:right-4 md:top-4 lg:right-4 lg:top-4 right-4 top-0 z-30 flex gap-2 ">
           <button

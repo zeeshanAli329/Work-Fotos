@@ -1,13 +1,17 @@
- <img className="" src="/pricing-left -img.svg" />
-          <div className="flex flex-col gap-5 lg-w-full md:w-full h-full justify-center items-center" >
-            <div className="flex flex-col gap-5 items-center justify-center">
-
-            <h1 className="font-inter font-bold lg:text-[48px] md:text-[48px] text-[28px] text-center leading-[100%] tracking-[0%]">
-             Smart Plans. WorkFotos Results.
-            </h1>
-            <p className="lg:text-[18px] md:text-[18px] text-[14px] w-[90%] text-center">
-             Join the modern platform designed to grow your business, boost your online presence, and showcase your work visually to your clients and community.
-            </p>
+<div className="flex flex-wrap justify-center items-center font-inter mt-8 lg:mt-10 transition-all duration-300 ease-in-out hover:scale-101 rounded-lg shadow-md bg-[#ffffff]">
+              <div className="md:w-[222px] md:h-[138px] lg:w-[292px] lg:h-[187px]  w-[210px] h-[110px] py-[16px] px-[12px]  md:px-[29px] md:py-[42px] flex flex-col justify-start items-start gap-5  ">
+                <div className="flex justify-center items-center gap-2 ">
+                  <img
+                    className="lg:w-[28px] lg:h-[28px] w-[19px] h-[20px] "
+                    src="/how-to-woks-page-file-2-img.svg"
+                  ></img>
+                  <h1 className="text-[#1E3A8A] font-bold lg:text-[20px] text-[14px] tracking-[0%] leading-[100%]">
+                    Organize Photos
+                  </h1>
+                </div>
+                <p className="lg:text-[16px] text-[12px] text-[#000000] ">
+                  Capture site photos, tag them with notes, dates, and locations
+                  all from your phone.
+                </p>
+              </div>
             </div>
-          </div>
-          <img src="/pricing-right-img.png" />

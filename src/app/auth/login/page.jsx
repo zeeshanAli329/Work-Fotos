@@ -2,35 +2,33 @@
 import { useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center px-6 py-12 bg-white">
-      {/* Logo */}
       <div className="mb-6 flex flex-col items-center">
         <div className="flex items-center gap-2">
+          <Link href={"/"}>
           <Image
             className="w-[300px] h-[90px]"
             src="/mb-logo.svg" 
             alt="WorkFotos Logo"
             width={45}
             height={45}
-          />
-          {/* <h1 className="text-[32px] font-bold text-black">
-            <span className="text-[#2563EB]">Work</span>Fotos
-          </h1> */}
+            />
+            </Link>
+ 
         </div>
         <p className="text-gray-600 mt-2 text-[16px]">Create your account</p>
       </div>
 
-      {/* Main Card */}
       <div className="w-full max-w-md">
-        {/* Google Button */}
         <button
           type="button"
-          className="w-full border border-gray-300 rounded-lg py-3 flex items-center justify-center gap-3 hover:bg-gray-50 transition"
+          className="w-full cursor-pointer border border-gray-300 rounded-lg py-3 flex items-center justify-center gap-3 hover:bg-gray-50 transition"
         >
           <Image
             src="/google.jpeg"
@@ -44,7 +42,6 @@ export default function SignUpPage() {
           </span>
         </button>
 
-        {/* Divider */}
         <div className="flex items-center my-6">
           <hr className="flex-grow border-gray-300" />
           <span className="px-3 text-gray-500 text-sm">
@@ -53,7 +50,6 @@ export default function SignUpPage() {
           <hr className="flex-grow border-gray-300" />
         </div>
 
-        {/* Email Field */}
         <div className="mb-4">
           <label className="block text-gray-800 font-medium mb-1">Email</label>
           <input
@@ -63,7 +59,6 @@ export default function SignUpPage() {
           />
         </div>
 
-        {/* Password Field */}
         <div className="mb-2 relative">
           <label className="block text-gray-800 font-medium mb-1">
             Password
@@ -76,27 +71,24 @@ export default function SignUpPage() {
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-11 text-gray-500 hover:text-gray-700"
+            className="absolute right-3 top-11 text-gray-500 hover:text-gray-700 cursor-pointer"
           >
             {showPassword ? <FaRegEyeSlash /> : <FaRegEye />}
           </button>
         </div>
 
-        {/* Password Info */}
         <p className="text-gray-500 text-sm mb-6 leading-tight">
           Password must be at least 8 characters, and must include at least one
           special character.
         </p>
 
-        {/* Sign Up Button */}
         <button
           type="submit"
-          className="w-full bg-[#1E3A8A] hover:bg-[#142c6e] text-white py-3 rounded-lg text-[16px] font-semibold transition"
+          className="w-full cursor-pointer bg-[#1E3A8A] hover:bg-[#3051ae] text-white py-3 rounded-lg text-[16px] font-semibold transition"
         >
           Sign Up
         </button>
 
-        {/* Sign In Link */}
         <p className="text-center text-gray-700 mt-5">
           Already have an account?{" "}
           <a

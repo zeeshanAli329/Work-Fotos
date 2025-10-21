@@ -3,6 +3,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaRegArrowAltCircleRight } from "react-icons/fa"
 const WorksStepsSec = () => {
+  const Card = [
+    {
+      img: "/file-img.svg",
+      title: "Create Projects",
+      para: "Start by adding a job using the address or client name simple and organized from the start.",
+    },
+    {
+      img: "/share-img.svg",
+      title: "Upload & Track",
+      para: "Add jobsite photos, write notes, and keep progress visible all in one place."
+    },
+    {
+      img: "/upload-img.svg",
+      title: "Share or Showcase",
+      para: "Add jobsite photos, write notes, and keep progress visible all in one place."
+    }
+  ]
   return (
     <section>
                 
@@ -15,78 +32,25 @@ const WorksStepsSec = () => {
           Simplify your workflow in just three steps
         </p>
       </div>
-      <div className="flex flex-col md:flex-row lg:flex-row justify-between  lg:px-[100px] md:px-[70px] px-[20px] h-auto max-w-[1452px] ">
-        {/* -------- Image Section -------- */}
-        <div className="md:w-[50%] w-full lg:w-[50%] flex justify-center items-center group py-10 lg:py-0 ">
-          <div className="relative flex justify-center items-center w-full h-full">
-            <Image
-              src="/iphon-img-2.svg"
-              alt="Phone 2"
-              width={492}
-              height={240}
-              className="inline-block transform -rotate-10 transition-transform duration-300 group-hover:rotate-0 
-                 w-[190px] h-[300px] md:w-[240px] md:h-[400px] lg:w-[480px] lg:h-[500px]  "
-              priority
-            />
-            <Image
-              src="/iphon-img-1.svg"
-              alt="Phone 1"
-              width={492}
-              height={240}
-              className="inline-block transform rotate-10 transition-transform duration-300 group-hover:rotate-0 
-                             w-[190px] h-[300px] md:w-[240px] md:h-[400px] lg:w-[480px] lg:h-[500px] ml-[-40px] "
-              priority
-            />
+
+      {Card.map((items, index) => {
+        <div
+        key={index}
+        className="w-full md:w-[50%]  lg:w-[50%] flex flex-col gap-10 px-6 lg:pl-[40px] justify-center">
+        <div className="flex gap-3 justify-start">
+          <Image src={items.img} alt="Share" width={50} height={50} />
+          <div className="flex flex-col gap-2 text-black">
+              <h1 className="font-inter font-bold text-[20px] lg:text-[24px] leading-[100%]">
+                {items.title}
+              </h1>
+              <p className="font-inter font-normal text-[14px] lg:text-[16px] leading-[150%]">
+                {items.para}
+              </p>
+
           </div>
         </div>
-
-        {/* -------- Content Section -------- */}
-        <div className="w-full md:w-[50%]  lg:w-[50%] flex flex-col gap-10 px-6 lg:pl-[40px] justify-center">
-          {/* 1 */}
-          <div className="flex gap-2">
-            <div className="flex">
-              <Image src="/file-img.svg" alt="File" width={40} height={40} />
-            </div>
-            <div className="flex flex-col gap-2 text-black ">
-              <h1 className="font-inter font-bold text-[20px] lg:text-[24px] leading-[100%] ">
-                Create Projects
-              </h1>
-              <p className="font-inter font-normal text-[14px] lg:text-[16px] leading-[150%]">
-                Start by adding a job using the address or client name — simple
-                and organized from the start.
-              </p>
-            </div>
-          </div>
-
-          {/* 2 */}
-          <div className="flex gap-3">
-            <Image src="/share-img.svg" alt="Share" width={40} height={40} />
-            <div className="flex flex-col gap-2 text-black">
-              <h1 className="font-inter font-bold text-[20px] lg:text-[24px] leading-[100%]">
-                Upload & Track
-              </h1>
-              <p className="font-inter font-normal text-[14px] lg:text-[16px] leading-[150%]">
-                Add jobsite photos, write notes, and keep progress visible all
-                in one place.
-              </p>
-            </div>
-          </div>
-
-          {/* 3 */}
-          <div className="flex gap-3">
-            <Image src="/upload-img.svg" alt="Upload" width={40} height={40} />
-            <div className="flex flex-col gap-2 text-black">
-              <h1 className="font-inter font-bold text-[20px] lg:text-[24px] leading-[100%]">
-                Share or Showcase
-              </h1>
-              <p className="font-inter font-normal text-[14px] lg:text-[16px] leading-[150%]">
-                Add jobsite photos, write notes, and keep progress visible all
-                in one place.
-              </p>
-            </div>
-          </div>
         </div>
-      </div>
+      })}    
     </section>
   );
 };
