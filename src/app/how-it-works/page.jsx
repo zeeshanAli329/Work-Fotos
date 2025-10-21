@@ -15,22 +15,19 @@ import SmarterSection from "./smarter-section/SmarterSection";
 
 const page = () => {
   return (
-    <section className="relative z-0 flex flex-col justify-center items-center bg-gradient-to-br from-blue-50 to-indigo-100 ">
-      <div className="w-full max-w-[1450px] mx-auto">
+    <section className="bg-gradient-to-br from-blue-50 to-indigo-100">
+    
         <NavBar />
         <HeroPowerSection />
         <SmarterSection />
         <TaskCards />
         <Cards />
-        <div className="flex flex-col lg:px-[100px] md:px-[64px] px-[24px] relative">
-          <Slider />
-          <WorksPage />
-          <div className="relative z-10 -mb-[80px]">
-            <LastHeroSection />
-          </div>
-        </div>
+        <Slider />
+        <WorksPage />
+        <LastHeroSection />
         <Footer />
-      </div>
+    
+     
     </section>
   );
 };
