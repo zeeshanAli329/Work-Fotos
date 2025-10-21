@@ -12,9 +12,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-white z-40 text-[#111827] px-6 py-10 md:px-20 md:py-14 flex justify-center items-end max-w-[1440px] mt-20 md:mt-30 lg:mt-20">
+    <footer className="bg-white z-40 text-[#111827] px-6 py-10 md:px-20 md:py-14 flex justify-center items-end max-w-[1440px] mt-20 md:mt-30 lg:mt-30 lg:pt-30">
       <div className="max-w-[1240px] mx-auto w-full">
-        {/* parent flex */}
         <div
           className="
             flex flex-col 
@@ -23,13 +22,14 @@ const Footer = () => {
             md:[@media(max-width:1024px)]:flex-col md:[@media(max-width:1024px)]:items-start
           "
         >
-          {/* left section */}
           <div className="flex flex-col items-start gap-4 md:w-[50%] lg:w-[379px] tablet:mb-10">
-            <img
-              src="/footer-logo.svg"
-              alt="WorkFotos"
-              className="w-[200px] h-[48px]"
-            />
+            <Link href={"/"}>
+              <img
+                src="/footer-logo.svg"
+                alt="WorkFotos"
+                className="w-[200px] h-[48px]"
+              />
+            </Link>
             <p className="text-[16px] md:text-[20px] text-gray-600 leading-[150%] md:w-[85%]">
               WorkFotos helps visual pros and service teams document, organize,
               and share work effortlessly.
@@ -88,7 +88,6 @@ const Footer = () => {
             </div>
           </div>
 
-          
           <div
             className="
               flex flex-col gap-3 md:w-auto w-full 
@@ -108,7 +107,7 @@ const Footer = () => {
                 className="w-full sm:w-[320px] border border-gray-300 rounded-[12px] h-[50px] md:h-[57px] px-4 pr-[90px] focus:outline-none"
               />
               <button
-                className="group absolute lg:right-[85px] right-3 top-[4px] bg-[#1D4ED8] hover:bg-[#1E3A8A] text-white 
+                className="cursor-pointer group absolute lg:right-[85px] right-3 top-[4px] bg-[#1D4ED8] hover:bg-[#1E3A8A] text-white 
                 text-[14px] md:text-[15px] rounded-[10px] w-[80px] md:w-[103px] h-[40px] md:h-[49px] flex items-center justify-center gap-1 transition"
               >
                 Join

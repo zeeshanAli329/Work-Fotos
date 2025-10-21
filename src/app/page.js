@@ -1,5 +1,4 @@
-import FaqData from "./data/faqRender/FaqRender";
-import PricingFaq from "./data/PricingFaq";
+
 import HomeSection from "./home-components/HomeSection";
 
 export default function Home() {
@@ -10,7 +9,6 @@ export default function Home() {
       </div>
     </section>
  
-        // <FaqData />
-        // <PricingFaq />
+
   );
 }

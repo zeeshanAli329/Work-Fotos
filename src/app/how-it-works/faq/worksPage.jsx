@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import FaqData from "../FaqQuestions/FaqData";
-import FaqRender from "./faqRender/FaqRender";
+import FaqData from "@/app/FaqQuestions/FaqData";
+import FaqRender from "@/app/data/faqRender/FaqRender";
 const WorksPage = () => {
   const [open, setOpen] = useState(null);
 

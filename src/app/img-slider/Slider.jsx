@@ -35,9 +35,8 @@ const Slider = () => {
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
-  // Scroll when index changes (only on desktop)
   useEffect(() => {
-    if (isMobile) return; // disable smooth scroll on mobile (full width)
+    if (isMobile) return; 
     const el = sliderRef.current;
     if (!el) return;
     const scrollLeft = (slideWidth + gap) * index;
@@ -104,13 +103,13 @@ const Slider = () => {
         <div className="absolute md:right-4 md:top-4 lg:right-4 lg:top-4 right-4 top-0 z-30 flex gap-2 ">
           <button
             onClick={handlePrev}
-            className="bg-black text-white px-3 py-2 rounded-md shadow-md"
+            className="bg-black text-white px-3 py-2 rounded-md shadow-md cursor-pointer"
           >
             Prev
           </button>
           <button
             onClick={handleNext}
-            className="bg-black text-white px-3 py-2 rounded-md shadow-md"
+            className="bg-black text-white px-3 py-2 rounded-md shadow-md cursor-pointer"
           >
             Next
           </button>

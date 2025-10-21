@@ -1,14 +1,14 @@
 "use client";
 import next from "next";
 import { useState } from "react";
-import FaqRender from "./faqRender/FaqRender";
-import FaqData from "../FaqQuestions/FaqData";
+import FaqRender from "../../../data/faqRender/FaqRender";
+import FaqData from "../../../FaqQuestions/FaqData";
 
-const General = () => {
+const GeneralFaq = () => {
   const [open, setOpen] = useState(null);
 
   return (
-    <div className="flex flex-col lg:flex-row md:flex-row justify-between items-center  lg:gap-0 md:gap-[20px] gap-20 mt-10 mb-10">
+    <div className="flex flex-col lg:flex-row md:flex-row justify-between items-center  lg:gap-0 md:gap-[20px] gap-20 mt-10 mb-10 lg:mt-30 lg:px-[100px] md:px-[64px] px-[24px]">
     
       <div className="  lg:flex-col md:max-w-[343px] lg:max-w-[600px] ">
         <div className="md:flex lg:flex w-[70%] lg:w-[80%] text-center md:text-left hidden lg:mb-10">
@@ -38,4 +38,4 @@ const General = () => {
   );
 };
 
-export default General;
+export default GeneralFaq;

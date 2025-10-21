@@ -6,7 +6,7 @@ const FaqRender = ({ question, answer, isOpen, onToggle }) => {
       <div className="w-full max-w-[608px] flex flex-col">
         <button
           onClick={onToggle}
-          className={`flex justify-between  items-center w-full  px-5 py-4 md:py-2 lg:py-4 text-[18px] md:text-[20px] font-normal rounded-t-lg transition-all duration-300
+          className={`flex justify-between cursor-pointer items-center w-full  px-5 py-4 md:py-2 lg:py-4 text-[18px] md:text-[20px] font-normal rounded-t-lg transition-all duration-300
             ${
               isOpen
                 ? "border-t-4 border-t-[#0B5FFF] rounded-t-lg text-black bg-gray-50 "
