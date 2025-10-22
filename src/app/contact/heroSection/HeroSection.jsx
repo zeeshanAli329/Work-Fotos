@@ -2,7 +2,7 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <section>
+    <section className="max-w-[1452px] justify-center flex mx-auto">
       <div
         className="bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col lg:px-[100px] md:px-[64px] px-[24px] bg-cover bg-center bg-no-repeat h-[350px] lg:mt-[100px] mt-[60px] md:mt-[84px] w-full justify-center items-center"
         style={{ backgroundImage: "url('/contact-hero-img.svg')" }}

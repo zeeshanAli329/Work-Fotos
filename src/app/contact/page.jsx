@@ -12,7 +12,7 @@ const Page = () => {
   return (
     <>
     <section className="bg-gradient-to-br from-blue-50 to-indigo-100 ">
-      <div className="max-w-[1500px] mx-auto   flex flex-col justify-center items-center">
+    
 
 
            <WhiteNavBar />
@@ -20,7 +20,7 @@ const Page = () => {
            <ContactForm />
            <LastHeroSection />
            <Footer />
-      </div>
+    
     </section>
     </>
   );

@@ -15,7 +15,7 @@ const PricingCards = () => {
     "Mobile + Desktop Access",
   ];
     return (
-        <section>
+        <section className="max-w-[1452px] justify-center flex mx-auto">
                     <div className="flex w-full justify-center gap-0 md:mt-[-250px] lg:mt-[-250px] mt-[-200px]">
        
           <section className="flex justify-center items-center py-10 px-4">

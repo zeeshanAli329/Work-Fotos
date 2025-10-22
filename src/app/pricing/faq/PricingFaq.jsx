@@ -5,7 +5,7 @@ import FaqRender from "@/app/data/faqRender/FaqRender";
 const PricingFaq = () => {
   const [open, setOpen] = useState(null);
 
-  return (
+  return ( 
     <div className="flex flex-col lg:flex-row md:flex-row justify-between items-center  lg:gap-0 md:gap-[20px] gap-20 mt-10 mb-10 lg:px-[100px] md:px-[64px] px-[24px]">
       <div className="flex flex-col">
       <img src="/pricing-photo.svg" alt="photoGrapher" className="lg:w-[527px] lg:h-[544px] md:w-[343px] md:h-[434px]" />

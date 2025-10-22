@@ -3,6 +3,8 @@ import React from "react";
 
 const HeroPricingSec = () => {
   return (
+    <section className="max-w-[1452px] justify-center flex mx-auto ">
+
      <div className="flex flex-col bg-[linear-gradient(180deg,#1D4ED8_0%,#558DE2_47.89%,#558DE2_57.09%,#2769D7_100%)] m:h-screen lg:h-screen h-[585px] w-full ">
 
         <div className="flex flex-col justify-end   h-screen md:items-end lg:items-end items-center">
@@ -32,6 +34,7 @@ const HeroPricingSec = () => {
           </div>
         </div>
       </div>
+    </section>
   );
 };
 

@@ -12,7 +12,9 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-white z-40 text-[#111827] px-6 py-10 md:px-20 md:py-14 flex justify-center items-end max-w-[1440px] mt-20 md:mt-30 lg:mt-30 lg:pt-30">
+        <footer className="max-w-[1452px] justify-center flex mx-auto">
+    <section className="bg-white z-40 text-[#111827] px-6 py-10 md:px-20 md:py-14 flex justify-center items-end max-w-[1440px] mt-20 md:mt-30 lg:mt-30 lg:pt-30">
+
       <div className="max-w-[1240px] mx-auto w-full">
         <div
           className="
@@ -59,7 +61,7 @@ const Footer = () => {
 
           <div
             className="
-              flex flex-col  sm:flex-row gap-10 sm:gap-20 
+            flex flex-col  sm:flex-row gap-10 sm:gap-20 
               w-full md:w-[50%] justify-start md:justify-between 
               md:[@media(max-width:1024px)]:flex-row lg:justify-center
             "
@@ -90,10 +92,10 @@ const Footer = () => {
 
           <div
             className="
-              flex flex-col gap-3 md:w-auto w-full 
-              md:flex sm:flex sm:items-center sm:justify-center sm:mt-10
+            flex flex-col gap-3 md:w-auto w-full 
+            md:flex sm:flex sm:items-center sm:justify-center sm:mt-10
             "
-          >
+            >
             <h3 className="font-semibold text-[20px] md:text-[24px] mb-1 text-center sm:text-left">
               Stay in the loop
             </h3>
@@ -123,6 +125,7 @@ const Footer = () => {
           ©2025 WorkFotos | All Rights Reserved
         </div>
       </div>
+                </section>
     </footer>
   );
 };

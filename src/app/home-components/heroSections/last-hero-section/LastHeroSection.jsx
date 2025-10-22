@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const LastHeroSection = () => {
   return (
-    <section className="lg:px-[100px] md:px-[64px] px-[24px] lg:mt-20">
+    <section className="lg:px-[100px] md:px-[64px] px-[24px] lg:mt-20 max-w-[1452px] justify-center flex mx-auto flex-col">
       <div
         style={{
           backgroundImage: "url('/last-hero-bg.svg')",

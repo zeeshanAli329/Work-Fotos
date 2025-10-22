@@ -3,7 +3,8 @@ import next from "next";
 import { useEffect, useState } from "react";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 const ContactForm = () => {
-      const [formData, setFormData] = useState({
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     inquiry: "",
@@ -15,12 +16,40 @@ const ContactForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    setLoading(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        alert("Message sent successfully");
+        setFormData({
+          name: "",
+          email: "",
+          inquiry: "",
+          phone: "",
+          company: "",
+          message: "",
+        });
+      } else {
+        alert("Failed to send " + data.message);
+      }
+    } catch (error) {
+      console.log("Error: ", error);
+      alert("Something went wrong.");
+    }finally {
+    setLoading(false); 
+  }
   };
+
   return (
-    <section>
+    <section className="max-w-[1452px] justify-center flex mx-auto">
       <div className="flex flex-col lg:flex-row md-flex-row gap-10 pt-10 pb-10 w-full md:px-[64px] lg:px-[100px] px-[24px] lg:h-auto   ">
         <div className="flex justify-start items-center">
           <div className="flex flex-col gap-5 mt-20 text-black text-center lg:text-left items-center lg:items-start">
@@ -47,7 +76,6 @@ const ContactForm = () => {
             className="bg-white shadow-lg rounded-2xl w-[590px] h-auto px-[24px] py-[20px] flex flex-col justify-between"
           >
             <div className="space-y-6">
-              {/* Name + Email — same for all */}
               <div className="grid lg:grid-cols-2 grid-cols-1 gap-3">
                 <div>
                   <label className="block text-sm font-medium text-black mb-1">
@@ -59,7 +87,7 @@ const ContactForm = () => {
                     placeholder="Jhon Doe"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 
+                    className="w-full border border-gray-300 text-black rounded-lg px-3 py-2 
                     focus:outline-none focus:ring-2 focus:ring-blue-500 
                     placeholder:text-gray-500 placeholder:opacity-100"
                   />
@@ -75,7 +103,7 @@ const ContactForm = () => {
                     placeholder="you@company.com"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 
+                    className="w-full border border-gray-300 text-black rounded-lg px-3 py-2 
                     focus:outline-none focus:ring-2 focus:ring-blue-500 
                     placeholder:text-gray-500 placeholder:opacity-100"
                   />
@@ -99,7 +127,7 @@ const ContactForm = () => {
                       placeholder="+1 (555) 000-0000"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full border border-gray-300 rounded-r-lg px-3 py-2 
+                      className="w-full border text-black border-gray-300 rounded-r-lg px-3 py-2 
                       focus:outline-none focus:ring-2 focus:ring-blue-500 
                       placeholder:text-gray-500 placeholder:opacity-100"
                     />
@@ -116,7 +144,7 @@ const ContactForm = () => {
                     placeholder="WorkFotos"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 
+                    className="w-full border text-black border-gray-300 rounded-lg px-3 py-2 
                     focus:outline-none focus:ring-2 focus:ring-blue-500 
                     placeholder:text-gray-500 placeholder:opacity-100"
                   />
@@ -132,8 +160,8 @@ const ContactForm = () => {
                     name="inquiry"
                     value={formData.inquiry}
                     onChange={handleChange}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 
-                    focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-500"
+                    className="w-full border border-gray-300 text-gray-500  rounded-lg px-3 py-2 
+                    focus:outline-none focus:ring-2 focus:ring-blue-500 "
                   >
                     <option value="">Select one</option>
                     <option value="quote">Request a Quote</option>
@@ -143,7 +171,6 @@ const ContactForm = () => {
                 </div>
               </div>
 
-              {/* Message — visible for all */}
               <div>
                 <label className="block text-sm font-medium text-black mb-1">
                   How can we help?
@@ -154,7 +181,7 @@ const ContactForm = () => {
                   rows={3}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 
+                  className="w-full border text-black border-gray-300 rounded-lg px-3 py-2 
                   focus:outline-none focus:ring-2 focus:ring-blue-500 
                   placeholder:text-gray-500 placeholder:opacity-100 resize-none"
                 ></textarea>
@@ -163,13 +190,27 @@ const ContactForm = () => {
 
             <button
               type="submit"
-              className="w-full group cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 rounded-lg transition flex justify-center items-center gap-2 mt-2"
+              disabled={loading}
+              className={`w-full group cursor-pointer ${
+                loading
+                  ? "bg-blue-400 cursor-not-allowed"
+                  : "bg-blue-600 hover:bg-blue-700"
+              } text-white font-medium py-2.5 rounded-lg transition flex justify-center items-center gap-2 mt-2`}
             >
-              <span className="hidden lg:inline">Submit</span>
-              <span className="lg:hidden">Join WorkFotos</span>
-              <span className="inline-block transform -rotate-60 transition-transform duration-300 group-hover:rotate-0">
-                <FaRegArrowAltCircleRight />
-              </span>
+              {loading ? (
+                <>
+                  <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                  <span>Sending...</span>
+                </>
+              ) : (
+                <>
+                  <span className="hidden lg:inline">Submit</span>
+                  <span className="lg:hidden">Join WorkFotos</span>
+                  <span className="inline-block transform -rotate-60 transition-transform duration-300 group-hover:rotate-0">
+                    <FaRegArrowAltCircleRight />
+                  </span>
+                </>
+              )}
             </button>
           </form>
         </div>
